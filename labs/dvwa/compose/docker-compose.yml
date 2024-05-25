@@ -1,0 +1,42 @@
+version: '3.8'
+
+x-logging: # extension fields added since docker-compose v3.4
+  &default-logging
+  driver: "json-file"
+  options:
+    max-size: "50m"
+    max-file: "3"
+    
+services:
+  dvwa:
+    image: marcelocapozzi/dvwa:v2023.10.03
+    restart: unless-stopped
+    logging: *default-logging
+    environment:
+      - DB_SERVER=db
+    depends_on:
+      - db
+    networks:
+      - dvwa
+    ports:
+      - 80:80
+
+  db:
+    image: marcelocapozzi/mariadb:v2023.10.03
+    restart: unless-stopped
+    logging: *default-logging
+    environment:
+      - MYSQL_ROOT_PASSWORD=dvwa
+      - MYSQL_DATABASE=dvwa
+      - MYSQL_USER=dvwa
+      - MYSQL_PASSWORD=p@ssw0rd
+    volumes:
+      - dvwa:/var/lib/mysql
+    networks:
+      - dvwa
+
+volumes:
+  dvwa:
+
+networks:
+  dvwa:
