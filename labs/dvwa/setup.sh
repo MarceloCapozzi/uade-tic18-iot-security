@@ -45,14 +45,18 @@ echo "Docker and Docker Compose have been successfully installed and configured.
 
 # configure dvwa and run the container
 # Check if the DVWA container is already running
-if [ "$(docker ps -q -f name=dvwa)" ]; then
+if [ "$(sudo docker ps -q -f name=dvwa)" ]; then
     echo "DVWA container is already running."
     exit 0
 fi
 
 # Configure and run the DVWA container
 # Create the directory and download the docker-compose.yml file
-mkdir -p /opt/dvwa
+sudo mkdir -p /opt/dvwa
+
+# Change the owner of the directory to the current user
+sudo chown -R $USER:docker /opt/dvwa
+
 # Change to the directory
 cd /opt/dvwa
 
@@ -60,10 +64,10 @@ cd /opt/dvwa
 wget -q -O - https://raw.githubusercontent.com/MarceloCapozzi/uade-tic18-iot-security/main/labs/dvwa/compose/docker-compose.yml > docker-compose.yml
 
 # Start the DVWA container
-docker-compose up -d
+sudo docker-compose up -d
 
 # Check if the container is running
-if [ "$(docker ps -q -f name=dvwa)" ]; then
+if [ "$(sudo docker ps -q -f name=dvwa)" ]; then
     echo "DVWA container is running."
 else
     echo "Error: Failed to start the DVWA container."
@@ -72,18 +76,15 @@ fi
 
 # Configure firewall rules
 # Check if the firewall is active
-if ! systemctl is-active --quiet iptables; then
-    echo "Error: The iptables service is not active."
-    exit 1
-fi
+if systemctl is-active --quiet iptables; then
+    # Disable the firewall for the host
+    wget -q -O - https://raw.githubusercontent.com/MarceloCapozzi/uade-tic18-iot-security/main/scripts/firewall/disable-iptables.sh | bash
 
-# Disable the firewall for the host
-wget -q -O - https://raw.githubusercontent.com/MarceloCapozzi/uade-tic18-iot-security/main/scripts/firewall/disable-iptables.sh | bash
-
-# Check last command result
-if [ $? -ne 0 ]; then
-    echo "Error: Disabling iptables."
-    exit 1
+    # Check last command result
+    if [ $? -ne 0 ]; then
+        echo "Error: Disabling iptables."
+        exit 1
+    fi
 fi
 
 # Completion message
