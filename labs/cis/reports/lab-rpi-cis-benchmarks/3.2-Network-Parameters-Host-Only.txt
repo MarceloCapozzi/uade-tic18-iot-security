@@ -1,0 +1,14 @@
+3.2-Network-Parameters-Host-Only.bats
+ ✗ 3.2.1 Ensure packet redirect sending is disabled (Automated)
+   (from function `assert_success' in file benchmarks/3-Network-Configuration/../../test/test_helper/bats-files/src/assert_success.bash, line 42,
+    in test file benchmarks/3-Network-Configuration/3.2-Network-Parameters-Host-Only.bats, line 46)
+     `assert_success' failed
+   
+   -- command failed --
+   status : 1
+   output :
+   --
+   
+ ✓ 3.2.2 Ensure IP forwarding is disabled (Automated)
+
+2 tests, 1 failure

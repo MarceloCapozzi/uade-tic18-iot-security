@@ -1,0 +1,71 @@
+5.5-User-Accounts-and-Environment.bats
+ ✗ 5.5.1.1 Ensure minimum days between password changes is configured (Automated)
+   (from function `assert_success' in file benchmarks/5-Access-Authentication-and-Authorization/../../test/test_helper/bats-files/src/assert_success.bash, line 42,
+    in test file benchmarks/5-Access-Authentication-and-Authorization/5.5-User-Accounts-and-Environment.bats, line 45)
+     `assert_success' failed
+   
+   -- command failed --
+   status : 1
+   output :
+   --
+   
+ ✗ 5.5.1.2 Ensure password expiration is 365 days or less (Automated)
+   (from function `assert_success' in file benchmarks/5-Access-Authentication-and-Authorization/../../test/test_helper/bats-files/src/assert_success.bash, line 42,
+    in test file benchmarks/5-Access-Authentication-and-Authorization/5.5-User-Accounts-and-Environment.bats, line 56)
+     `assert_success' failed
+   
+   -- command failed --
+   status : 1
+   output :
+   --
+   
+ ✗ 5.5.1.3 Ensure password expiration warning days is 7 or more (Automated)
+   (from function `assert_success' in file benchmarks/5-Access-Authentication-and-Authorization/../../test/test_helper/bats-files/src/assert_success.bash, line 42,
+    in test file benchmarks/5-Access-Authentication-and-Authorization/5.5-User-Accounts-and-Environment.bats, line 68)
+     `assert_success' failed
+   
+   -- command failed --
+   status : 1
+   output :
+   --
+   
+ ✗ 5.5.1.4 Ensure inactive password lock is 30 days or less (Automated)
+   (from function `assert_success' in file benchmarks/5-Access-Authentication-and-Authorization/../../test/test_helper/bats-files/src/assert_success.bash, line 42,
+    in test file benchmarks/5-Access-Authentication-and-Authorization/5.5-User-Accounts-and-Environment.bats, line 79)
+     `assert_success' failed
+   
+   -- command failed --
+   status : 1
+   output :
+   --
+   
+ ✓ 5.5.1.5 Ensure all users last password change date is in the past (Automated)
+ ✓ 5.5.2 Ensure system accounts are secured (Automated)
+ ✓ 5.5.3 Ensure default group for the root account is GID 0 (Automated)
+ ✗ 5.5.4 Ensure default user umask is 027 or more restrictive (Automated)
+   (from function `assert_output' in file benchmarks/5-Access-Authentication-and-Authorization/../../test/test_helper/bats-files/src/assert_output.bash, line 186,
+    in test file benchmarks/5-Access-Authentication-and-Authorization/5.5-User-Accounts-and-Environment.bats, line 123)
+     `assert_output --partial "Default user umask is set"' failed
+   
+   -- output does not contain substring --
+   substring : Default user umask is set
+   output    :
+   --
+   
+ ✗ 5.5.5 Ensure default user shell timeout is 900 seconds or less (Automated)
+   (from function `assert_output' in file benchmarks/5-Access-Authentication-and-Authorization/../../test/test_helper/bats-files/src/assert_output.bash, line 186,
+    in test file benchmarks/5-Access-Authentication-and-Authorization/5.5-User-Accounts-and-Environment.bats, line 134)
+     `assert_output --partial "PASSED"' failed
+   
+   -- output does not contain substring --
+   substring (1 lines):
+     PASSED
+   output (4 lines):
+   
+     FAILED
+   
+     TMOUT is not configured
+   --
+   
+
+9 tests, 6 failures

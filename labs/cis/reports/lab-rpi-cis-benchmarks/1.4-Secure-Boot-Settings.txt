@@ -1,0 +1,6 @@
+1.4-Secure-Boot-Settings.bats
+ - 1.4.1 Ensure bootloader password is set (Automated) (skipped: /boot/grub/grub.cfg is not exists)
+ - 1.4.2 Ensure permissions on bootloader config are configured (Automated) (skipped: /boot/grub/grub.cfg is not exists)
+ ✓ 1.4.3 Ensure authentication required for single user mode (Automated)
+
+3 tests, 0 failures, 2 skipped

@@ -1,0 +1,125 @@
+3.5-Firewall-Configuration.bats
+ ✗ 3.5.1.1 Ensure ufw is installed (Automated)
+   (from function `assert_success' in file benchmarks/3-Network-Configuration/../../test/test_helper/bats-files/src/assert_success.bash, line 42,
+    in test file benchmarks/3-Network-Configuration/3.5-Firewall-Configuration.bats, line 52)
+     `assert_success' failed
+   
+   -- command failed --
+   status : 1
+   output :
+   --
+   
+ ✓ 3.5.1.2 Ensure iptables-persistent is not installed with ufw (Automated)
+ ✗ 3.5.1.3 Ensure ufw service is enabled (Automated)
+   (from function `assert_success' in file benchmarks/3-Network-Configuration/../../test/test_helper/bats-files/src/assert_success.bash, line 42,
+    in test file benchmarks/3-Network-Configuration/3.5-Firewall-Configuration.bats, line 68)
+     `assert_success' failed
+   
+   -- command failed --
+   status : 1
+   output :
+   --
+   
+ - 3.5.1.4 Ensure ufw loopback traffic is configured (Automated) (skipped: ufw is not installed)
+ - 3.5.1.5 Ensure ufw outbound connections are configured (Manual) (skipped: ufw is not installed)
+ - 3.5.1.6 Ensure ufw firewall rules exist for all open ports (Automated) (skipped: ufw is not installed)
+ - 3.5.1.7 Ensure ufw default deny firewall policy (Automated) (skipped: ufw is not installed)
+ ✓ 3.5.2.1 Ensure nftables is installed (Automated)
+ ✓ 3.5.2.2 Ensure ufw is uninstalled or disabled with nftables (Automated)
+ - 3.5.2.3 Ensure iptables are flushed with nftables (Manual) (skipped: nftables is a replacement for iptables, ip6tables, ebtables and arptables. Ensure no iptables rules exist. run iptables -L)
+ - 3.5.2.4 Ensure a nftables table exists (Automated) (skipped: nftables is not installed)
+ - 3.5.2.5 Ensure nftables base chains exist (Automated) (skipped: nftables is not installed)
+ - 3.5.2.6 Ensure nftables loopback traffic is configured (Automated) (skipped: nftables is not installed)
+ - 3.5.2.7 Ensure nftables outbound and established connections are configured (Manual) (skipped: nftables is not installed)
+ - 3.5.2.8 Ensure nftables default deny firewall policy (Automated) (skipped: nftables is not installed)
+ ✗ 3.5.2.9 Ensure nftables service is enabled (Automated)
+   (from function `assert_success' in file benchmarks/3-Network-Configuration/../../test/test_helper/bats-files/src/assert_success.bash, line 42,
+    in test file benchmarks/3-Network-Configuration/3.5-Firewall-Configuration.bats, line 290)
+     `assert_success' failed
+   
+   -- command failed --
+   status : 1
+   output :
+   --
+   
+ - 3.5.2.10 Ensure nftables rules are permanent (Automated) (skipped: nftables is not installed)
+ ✗ 3.5.3.1.1 Ensure iptables packages are installed (Automated)
+   (from function `assert_success' in file benchmarks/3-Network-Configuration/../../test/test_helper/bats-files/src/assert_success.bash, line 42,
+    in test file benchmarks/3-Network-Configuration/3.5-Firewall-Configuration.bats, line 313)
+     `assert_success' failed
+   
+   -- command failed --
+   status : 1
+   output :
+   --
+   
+ ✗ 3.5.3.1.2 Ensure nftables is not installed with iptables (Automated)
+   (from function `assert_failure' in file benchmarks/3-Network-Configuration/../../test/test_helper/bats-files/src/assert_failure.bash, line 66,
+    in test file benchmarks/3-Network-Configuration/3.5-Firewall-Configuration.bats, line 326)
+     `assert_failure' failed
+   
+   -- command succeeded, but it was expected to fail --
+   output :
+   --
+   
+ ✓ 3.5.3.1.3 Ensure ufw is uninstalled or disabled with iptables (Automated)
+ ✗ 3.5.3.2.1 Ensure iptables default deny firewall policy (Automated)
+   (from function `assert_output' in file benchmarks/3-Network-Configuration/../../test/test_helper/bats-files/src/assert_output.bash, line 186,
+    in test file benchmarks/3-Network-Configuration/3.5-Firewall-Configuration.bats, line 349)
+     `assert_output --partial "Chain INPUT (policy DROP)"' failed
+   
+   -- output does not contain substring --
+   substring (1 lines):
+     Chain INPUT (policy DROP)
+   output (38 lines):
+     Chain INPUT (policy ACCEPT)
+     target     prot opt source               destination
+   
+     Chain FORWARD (policy DROP)
+     target     prot opt source               destination
+     DOCKER-USER  all  --  anywhere             anywhere
+     DOCKER-ISOLATION-STAGE-1  all  --  anywhere             anywhere
+     ACCEPT     all  --  anywhere             anywhere             ctstate RELATED,ESTABLISHED
+     DOCKER     all  --  anywhere             anywhere
+     ACCEPT     all  --  anywhere             anywhere
+     ACCEPT     all  --  anywhere             anywhere
+     ACCEPT     all  --  anywhere             anywhere             ctstate RELATED,ESTABLISHED
+     DOCKER     all  --  anywhere             anywhere
+     ACCEPT     all  --  anywhere             anywhere
+     ACCEPT     all  --  anywhere             anywhere
+   
+     Chain OUTPUT (policy ACCEPT)
+     target     prot opt source               destination
+   
+     Chain DOCKER (2 references)
+     target     prot opt source               destination
+     ACCEPT     tcp  --  anywhere             172.18.0.3           tcp dpt:http
+   
+     Chain DOCKER-ISOLATION-STAGE-1 (1 references)
+     target     prot opt source               destination
+     DOCKER-ISOLATION-STAGE-2  all  --  anywhere             anywhere
+     DOCKER-ISOLATION-STAGE-2  all  --  anywhere             anywhere
+     RETURN     all  --  anywhere             anywhere
+   
+     Chain DOCKER-ISOLATION-STAGE-2 (2 references)
+     target     prot opt source               destination
+     DROP       all  --  anywhere             anywhere
+     DROP       all  --  anywhere             anywhere
+     RETURN     all  --  anywhere             anywhere
+   
+     Chain DOCKER-USER (1 references)
+     target     prot opt source               destination
+     RETURN     all  --  anywhere             anywhere
+   --
+   
+ ✗ 3.5.3.2.2 Ensure iptables loopback traffic is configured (Automated)
+   (in test file benchmarks/3-Network-Configuration/3.5-Firewall-Configuration.bats, line 369)
+     `[[ "$output" = *"ACCEPT"*"all"*"--"*"lo"*"*"*"0.0.0.0/0"*"0.0.0.0/0"* ]]' failed
+ - 3.5.3.2.3 Ensure iptables outbound and established connections are configured (Manual) (skipped: verify all rules for new outbound, and established connections match site policy. Run iptables -L -v -n)
+ - 3.5.3.2.4 Ensure iptables firewall rules exist for all open ports (Automated) (skipped: determine open ports. Run ss -4tuln. Determine firewall rules. Run iptables -L INPUT -v -n)
+ - 3.5.3.3.1 Ensure ip6tables default deny firewall policy (Automated) (skipped: ip6tables is not installed)
+ - 3.5.3.3.2 Ensure ip6tables loopback traffic is configured (Automated) (skipped: ip6tables is not installed)
+ - 3.5.3.3.3 Ensure ip6tables outbound and established connections are configured (Manual) (skipped: ip6tables is not installed)
+ - 3.5.3.3.4 Ensure ip6tables firewall rules exist for all open ports (Automated) (skipped: Determine open ports. Run ss -6tuln. Determine firewall rules. Run ip6tables -L INPUT -v -n)
+
+28 tests, 7 failures, 17 skipped

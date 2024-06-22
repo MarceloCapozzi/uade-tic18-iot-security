@@ -1,0 +1,30 @@
+4.2-Configure-Logging.bats
+ ✗ 4.2.1.1.1 Ensure systemd-journal-remote is installed (Automated)
+   (from function `assert_success' in file benchmarks/4-Logging-and-Auditing/../../test/test_helper/bats-files/src/assert_success.bash, line 42,
+    in test file benchmarks/4-Logging-and-Auditing/4.2-Configure-Logging.bats, line 45)
+     `assert_success' failed
+   
+   -- command failed --
+   status : 1
+   output :
+   --
+   
+ - 4.2.1.1.2 Ensure systemd-journal-remote is configured (Manual) (skipped: systemd-journal-remote is not installed)
+ - 4.2.1.1.3 Ensure systemd-journal-remote is enabled (Manual) (skipped: systemd-journal-remote is not installed)
+ - 4.2.1.1.4 Ensure journald is not configured to recieve logs from a remote client (Automated) (skipped: systemd-journal-remote is not installed)
+ ✓ 4.2.1.2 Ensure journald service is enabled (Automated)
+ - 4.2.1.3 Ensure journald is configured to compress large log files (Automated) (skipped: systemd-journald is not installed)
+ - 4.2.1.4 Ensure journald is configured to write logfiles to persistent disk (Automated) (skipped: systemd-journald is not installed)
+ - 4.2.1.5 Ensure journald is not configured to send logs to rsyslog (Manual) (skipped: systemd-journald is not installed)
+ - 4.2.1.6 Ensure journald log rotation is configured per site policy (Manual) (skipped: this check must be done manually)
+ - 4.2.1.7 Ensure journald default file permissions configured (Manual) (skipped: this check must be done manually)
+ ✓ 4.2.2.1 Ensure rsyslog is installed (Automated)
+ ✓ 4.2.2.2 Ensure rsyslog service is enabled (Automated)
+ - 4.2.2.3 Ensure journald is configured to send logs to rsyslog (Manual) (skipped: systemd-journald is not installed)
+ - 4.2.2.4 Ensure rsyslog default file permissions are configured (Automated) (skipped: systemd-journald is not installed)
+ - 4.2.2.5 Ensure logging is configured (Manual) (skipped: this check must be done manually)
+ - 4.2.2.6 Ensure rsyslog is configured to send logs to a remote log host (Manual) (skipped: this check must be done manually)
+ - 4.2.2.7 Ensure rsyslog is not configured to receive logs from a remote client (Automated) (skipped: systemd-journald is not installed)
+ - 4.2.3 Ensure all logfiles have appropriate permissions and ownership (Automated) (skipped: use 'get-permissions-and-ownership-to-logfiles' from ./helpers/logging to verify that files in /var/log/ have appropriate permissions)
+
+18 tests, 1 failure, 14 skipped

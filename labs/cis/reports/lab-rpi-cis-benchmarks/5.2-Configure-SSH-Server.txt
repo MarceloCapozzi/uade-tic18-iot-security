@@ -1,0 +1,101 @@
+5.2-Configure-SSH-Server.bats
+ ✗ 5.2.1 Ensure permissions on /etc/ssh/sshd_config are configured (Automated)
+   (from function `assert_success' in file benchmarks/5-Access-Authentication-and-Authorization/../../test/test_helper/bats-files/src/assert_success.bash, line 42,
+    in test file benchmarks/5-Access-Authentication-and-Authorization/5.2-Configure-SSH-Server.bats, line 78)
+     `assert_success' failed
+   
+   -- command failed --
+   status : 1
+   output :
+   --
+   
+ - 5.2.2 Ensure permissions on SSH private host key files are configured (Automated) (skipped: use 'verify-ssh-keys-mode' from ./helpers/access to verify SSH private host key files are mode 0600 or more restrictive, owned be the root user, and owned be the group root or group designated to own openSSH private keys)
+ - 5.2.3 Ensure permissions on SSH public host key files are configured (Automated) (skipped: verify Access does not grant write or execute permissions to group or other for all returned files. Run 'find /etc/ssh -xdev -type f -name 'ssh_host_*_key.pub' -exec stat {} \;')
+ ✗ 5.2.4 Ensure SSH access is limited (Automated)
+   (from function `assert_success' in file benchmarks/5-Access-Authentication-and-Authorization/../../test/test_helper/bats-files/src/assert_success.bash, line 42,
+    in test file benchmarks/5-Access-Authentication-and-Authorization/5.2-Configure-SSH-Server.bats, line 103)
+     `assert_success' failed
+   
+   -- command failed --
+   status : 1
+   output :
+   --
+   
+ ✗ 5.2.5 Ensure SSH LogLevel is appropriate (Automated)
+   (in test file benchmarks/5-Access-Authentication-and-Authorization/5.2-Configure-SSH-Server.bats, line 124)
+     `[[ "${output}" = *"loglevel VERBOSE"* ]] || [[ "${output}" = *"loglevel INFO"* ]]' failed
+ ✓ 5.2.6 Ensure SSH PAM is enabled (Automated)
+ ✗ 5.2.7 Ensure SSH root login is disabled (Automated)
+   (from function `assert_success' in file benchmarks/5-Access-Authentication-and-Authorization/../../test/test_helper/bats-files/src/assert_success.bash, line 42,
+    in test file benchmarks/5-Access-Authentication-and-Authorization/5.2-Configure-SSH-Server.bats, line 162)
+     `assert_success' failed
+   
+   -- command failed --
+   status : 1
+   output :
+   --
+   
+ ✓ 5.2.8 Ensure SSH HostbasedAuthentication is disabled (Automated)
+ ✓ 5.2.9 Ensure SSH PermitEmptyPasswords is disabled (Automated)
+ ✓ 5.2.10 Ensure SSH PermitUserEnvironment is disabled (Automated)
+ ✓ 5.2.11 Ensure SSH IgnoreRhosts is enabled (Automated)
+ ✗ 5.2.12 Ensure SSH X11 forwarding is disabled (Automated)
+   (from function `assert_success' in file benchmarks/5-Access-Authentication-and-Authorization/../../test/test_helper/bats-files/src/assert_success.bash, line 42,
+    in test file benchmarks/5-Access-Authentication-and-Authorization/5.2-Configure-SSH-Server.bats, line 257)
+     `assert_success' failed
+   
+   -- command failed --
+   status : 1
+   output :
+   --
+   
+ ✓ 5.2.13 Ensure only strong Ciphers are used (Automated)
+ ✗ 5.2.14 Ensure only strong MAC algorithms are used (Automated)
+   (in test file benchmarks/5-Access-Authentication-and-Authorization/5.2-Configure-SSH-Server.bats, line 301)
+     `[[ "${output}" != *"hmac-sha1"* ]]' failed
+ ✓ 5.2.15 Ensure only strong Key Exchange algorithms are used (Automated)
+ ✗ 5.2.16 Ensure SSH AllowTcpForwarding is disabled (Automated)
+   (from function `assert_success' in file benchmarks/5-Access-Authentication-and-Authorization/../../test/test_helper/bats-files/src/assert_success.bash, line 42,
+    in test file benchmarks/5-Access-Authentication-and-Authorization/5.2-Configure-SSH-Server.bats, line 345)
+     `assert_success' failed
+   
+   -- command failed --
+   status : 1
+   output :
+   --
+   
+ ✗ 5.2.17 Ensure SSH warning banner is configured (Automated)
+   (from function `assert_success' in file benchmarks/5-Access-Authentication-and-Authorization/../../test/test_helper/bats-files/src/assert_success.bash, line 42,
+    in test file benchmarks/5-Access-Authentication-and-Authorization/5.2-Configure-SSH-Server.bats, line 364)
+     `assert_success' failed
+   
+   -- command failed --
+   status : 1
+   output :
+   --
+   
+ ✗ 5.2.18 Ensure SSH MaxAuthTries is set to 4 or less (Automated)
+   (from function `assert_success' in file benchmarks/5-Access-Authentication-and-Authorization/../../test/test_helper/bats-files/src/assert_success.bash, line 42,
+    in test file benchmarks/5-Access-Authentication-and-Authorization/5.2-Configure-SSH-Server.bats, line 379)
+     `assert_success' failed
+   
+   -- command failed --
+   status : 1
+   output :
+   --
+   
+ ✓ 5.2.19 Ensure SSH MaxStartups is configured (Automated)
+ ✓ 5.2.20 Ensure SSH MaxSessions is set to 10 or less (Automated)
+ ✓ 5.2.21 Ensure SSH LoginGraceTime is set to one minute or less (Automated)
+ ✗ 5.2.22 Ensure SSH Idle Timeout Interval is configured (Automated)
+   (from function `assert_success' in file benchmarks/5-Access-Authentication-and-Authorization/../../test/test_helper/bats-files/src/assert_success.bash, line 42,
+    in test file benchmarks/5-Access-Authentication-and-Authorization/5.2-Configure-SSH-Server.bats, line 457)
+     `assert_success' failed
+   
+   -- command failed --
+   status : 1
+   output :
+   --
+   
+
+22 tests, 10 failures, 2 skipped

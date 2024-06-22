@@ -1,0 +1,14 @@
+1.8-GNOME-Display-Manager.bats
+ ✓ 1.8.1 Ensure GNOME Display Manager is removed (Automated)
+ - 1.8.2 Ensure GDM login banner is configured (Automated) (skipped: gdm or gdm3 is not installed)
+ - 1.8.3 Ensure GDM disable-user-list option is enabled (Automated) (skipped: gdm or gdm3 is not installed)
+ - 1.8.4 Ensure GDM screen locks when the user is idle (Automated) (skipped: gdm or gdm3 is not installed)
+ - 1.8.5 Ensure GDM screen locks cannot be overridden (Automated) (skipped: gdm or gdm3 is not installed)
+ - 1.8.6 Ensure GDM automatic mounting of removable media is disabled (Automated) (skipped: gdm or gdm3 is not installed)
+ - 1.8.7 Ensure GDM disabling automatic mounting of removable media is not overridden (Automated) (skipped: gdm or gdm3 is not installed)
+ - 1.8.8 Ensure GDM autorun-never is enabled (Automated) (skipped: gdm or gdm3 is not installed)
+ - 1.8.9 Ensure GDM autorun-never is not overridden (Automated) (skipped: gdm or gdm3 is not installed)
+ - 1.8.10 Ensure XDCMP is not enabled (Automated) (skipped: gdm or gdm3 is not installed)
+ - 1.9 Ensure updates, patches, and additional security software are installed (Manual) (skipped: this check must be done manually)
+
+11 tests, 0 failures, 10 skipped

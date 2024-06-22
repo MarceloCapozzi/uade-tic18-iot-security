@@ -1,0 +1,48 @@
+5.4-Configure-PAM.bats
+ - 5.4.1 Ensure password creation requirements are configured (Automated) (skipped: libpam-pwquality is not installed)
+ ✗ 5.4.2 Ensure lockout for failed password attempts is configured (Automated)
+   (from function `assert_success' in file benchmarks/5-Access-Authentication-and-Authorization/../../test/test_helper/bats-files/src/assert_success.bash, line 42,
+    in test file benchmarks/5-Access-Authentication-and-Authorization/5.4-Configure-PAM.bats, line 68)
+     `assert_success' failed
+   
+   -- command failed --
+   status : 1
+   output :
+   --
+   
+ ✗ 5.4.3 Ensure password reuse is limited (Automated)
+   (from function `assert_success' in file benchmarks/5-Access-Authentication-and-Authorization/../../test/test_helper/bats-files/src/assert_success.bash, line 42,
+    in test file benchmarks/5-Access-Authentication-and-Authorization/5.4-Configure-PAM.bats, line 94)
+     `assert_success' failed
+   
+   -- command failed --
+   status : 1
+   output :
+   --
+   
+ ✗ 5.4.4 Ensure password hashing algorithm is up to date with the latest standards (Automated)
+   (from function `assert_failure' in file benchmarks/5-Access-Authentication-and-Authorization/../../test/test_helper/bats-files/src/assert_failure.bash, line 66,
+    in test file benchmarks/5-Access-Authentication-and-Authorization/5.4-Configure-PAM.bats, line 101)
+     `assert_failure' failed
+   
+   -- command succeeded, but it was expected to fail --
+   output (5 lines):
+   
+   
+   
+     password   requisite                       pam_deny.so
+     password   required                        pam_permit.so
+   --
+   
+ ✗ 5.4.5 Ensure all current passwords uses the configured hashing algorithm (Manual)
+   (from function `assert_success' in file benchmarks/5-Access-Authentication-and-Authorization/../../test/test_helper/bats-files/src/assert_success.bash, line 42,
+    in test file benchmarks/5-Access-Authentication-and-Authorization/5.4-Configure-PAM.bats, line 111)
+     `assert_success' failed
+   
+   -- command failed --
+   status : 1
+   output : The password for 'uade' is using 'yescrypt' instead of the configured 'SHA512'.
+   --
+   
+
+5 tests, 4 failures, 1 skipped

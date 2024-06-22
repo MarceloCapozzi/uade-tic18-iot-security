@@ -1,0 +1,5 @@
+1.2-Configure-Software-Updates.bats
+ - 1.2.1 Ensure package manager repositories are configured (Manual) (skipped: verify if package repositories policy are configured correctly)
+ - 1.2.2 Ensure GPG keys are configured (Manual) (skipped: verify if GPG keys are configured correctly for your package manager)
+
+2 tests, 0 failures, 2 skipped

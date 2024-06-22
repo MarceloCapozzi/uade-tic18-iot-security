@@ -1,0 +1,34 @@
+2.2-Special-Purpose-Services.bats
+ ✓ 2.2.1 Ensure X Window System is not installed (Automated)
+ ✗ 2.2.2 Ensure Avahi Server is not installed (Automated)
+   (from function `assert_failure' in file benchmarks/2-Services/../../test/test_helper/bats-files/src/assert_failure.bash, line 66,
+    in test file benchmarks/2-Services/2.2-Special-Purpose-Services.bats, line 53)
+     `assert_failure' failed
+   
+   -- command succeeded, but it was expected to fail --
+   output :
+   --
+   
+ ✓ 2.2.3 Ensure CUPS is not installed (Automated)
+ ✓ 2.2.4 Ensure DHCP Server is not installed (Automated)
+ ✓ 2.2.5 Ensure LDAP server is not installed (Automated)
+ ✓ 2.2.6 Ensure NFS is not installed (Automated)
+ ✓ 2.2.7 Ensure DNS Server is not installed (Automated)
+ ✓ 2.2.8 Ensure FTP Server is not installed (Automated)
+ ✓ 2.2.9 Ensure HTTP server is not installed (Automated)
+ ✓ 2.2.10 Ensure IMAP and POP3 server are not installed (Automated)
+ ✓ 2.2.11 Ensure Samba is not installed (Automated)
+ ✓ 2.2.12 Ensure HTTP Proxy Server is not installed (Automated)
+ ✓ 2.2.13 Ensure SNMP Server is not installed (Automated)
+ ✓ 2.2.14 Ensure NIS Server is not installed (Automated)
+ ✓ 2.2.15 Ensure mail transfer agent is configured for local-only mode (Automated)
+ ✗ 2.2.16 Ensure rsync service is either not installed or masked (Automated)
+   (from function `assert_failure' in file benchmarks/2-Services/../../test/test_helper/bats-files/src/assert_failure.bash, line 66,
+    in test file benchmarks/2-Services/2.2-Special-Purpose-Services.bats, line 170)
+     `assert_failure' failed
+   
+   -- command succeeded, but it was expected to fail --
+   output :
+   --
+   
+16 tests, 2 failures

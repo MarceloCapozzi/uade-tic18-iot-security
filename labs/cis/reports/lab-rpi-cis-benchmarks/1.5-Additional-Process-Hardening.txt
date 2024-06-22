@@ -1,0 +1,24 @@
+1.5-Additional-Process-Hardening.bats
+ ✗ 1.5.1 Ensure address space layout randomization (ASLR) is enabled (Automated)
+   (from function `assert_success' in file benchmarks/1-Initial-Setup/../../test/test_helper/bats-files/src/assert_success.bash, line 42,
+    in test file benchmarks/1-Initial-Setup/1.5-Additional-Process-Hardening.bats, line 52)
+     `assert_success' failed
+   
+   -- command failed --
+   status : 1
+   output :
+   --
+   
+ ✓ 1.5.2 Ensure prelink is not installed (Automated)
+ ✓ 1.5.3 Ensure Automatic Error Reporting is not enabled (Automated)
+ ✗ 1.5.4 Ensure core dumps are restricted (Automated)
+   (from function `assert_success' in file benchmarks/1-Initial-Setup/../../test/test_helper/bats-files/src/assert_success.bash, line 42,
+    in test file benchmarks/1-Initial-Setup/1.5-Additional-Process-Hardening.bats, line 85)
+     `assert_success' failed
+   
+   -- command failed --
+   status : 2
+   output :
+   --
+
+4 tests, 2 failures

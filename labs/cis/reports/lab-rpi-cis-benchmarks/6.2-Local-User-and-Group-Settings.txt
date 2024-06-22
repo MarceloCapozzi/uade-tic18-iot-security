@@ -1,0 +1,81 @@
+6.2-Local-User-and-Group-Settings.bats
+ ✗ 6.2.1 Ensure accounts in /etc/passwd use shadowed passwords (Automated)
+   (from function `assert_output' in file benchmarks/6-System-Maintenance/../../test/test_helper/bats-files/src/assert_output.bash, line 194,
+    in test file benchmarks/6-System-Maintenance/6.2-Local-User-and-Group-Settings.bats, line 45)
+     `assert_output ""' failed
+   
+   -- output differs --
+   expected (0 lines):
+   
+   actual (29 lines):
+      is not set to shadowed passwords
+      is not set to shadowed passwords
+      is not set to shadowed passwords
+      is not set to shadowed passwords
+      is not set to shadowed passwords
+      is not set to shadowed passwords
+      is not set to shadowed passwords
+      is not set to shadowed passwords
+      is not set to shadowed passwords
+      is not set to shadowed passwords
+      is not set to shadowed passwords
+      is not set to shadowed passwords
+      is not set to shadowed passwords
+      is not set to shadowed passwords
+      is not set to shadowed passwords
+      is not set to shadowed passwords
+      is not set to shadowed passwords
+      is not set to shadowed passwords
+      is not set to shadowed passwords
+      is not set to shadowed passwords
+      is not set to shadowed passwords
+      is not set to shadowed passwords
+      is not set to shadowed passwords
+      is not set to shadowed passwords
+      is not set to shadowed passwords
+      is not set to shadowed passwords
+      is not set to shadowed passwords
+      is not set to shadowed passwords
+      is not set to shadowed passwords
+   --
+   
+ ✓ 6.2.2 Ensure /etc/shadow password fields are not empty (Automated)
+ ✓ 6.2.3 Ensure all groups in /etc/passwd exist in /etc/group (Automated)
+ ✗ 6.2.4 Ensure shadow group is empty (Automated)
+   (from function `assert_output' in file benchmarks/6-System-Maintenance/../../test/test_helper/bats-files/src/assert_output.bash, line 194,
+    in test file benchmarks/6-System-Maintenance/6.2-Local-User-and-Group-Settings.bats, line 70)
+     `assert_output ""' failed
+   
+   -- output differs --
+   expected :
+   actual   : shadow:x:42:
+   --
+   
+ ✓ 6.2.5 Ensure no duplicate UIDs exist (Automated)
+ ✓ 6.2.6 Ensure no duplicate GIDs exist (Automated)
+ ✓ 6.2.7 Ensure no duplicate user names exist (Automated)
+ ✓ 6.2.8 Ensure no duplicate group names exist (Automated)
+ ✓ 6.2.9 Ensure root PATH Integrity (Automated)
+ ✓ 6.2.10 Ensure root is the only UID 0 account (Automated)
+ ✓ 6.2.11 Ensure local interactive user home directories exist (Automated)
+ ✓ 6.2.12 Ensure local interactive users own their home directories (Automated)
+ ✗ 6.2.13 Ensure local interactive user home directories are mode 750 or more restrictive (Automated)
+   (from function `assert_output' in file benchmarks/6-System-Maintenance/../../test/test_helper/bats-files/src/assert_output.bash, line 186,
+    in test file benchmarks/6-System-Maintenance/6.2-Local-User-and-Group-Settings.bats, line 152)
+     `assert_output --partial "PASSED"' failed
+   
+   -- output does not contain substring --
+   substring (1 lines):
+     PASSED
+   output (3 lines):
+   
+     - FAILED:
+     - User uade home directory: "/home/uade" is too permissive: "0755" (should be: "750" or more restrictive)
+   --
+   
+ ✓ 6.2.14 Ensure no local interactive user has .netrc files (Automated)
+ ✓ 6.2.15 Ensure no local interactive user has .forward files (Automated)
+ ✓ 6.2.16 Ensure no local interactive user has .rhosts files (Automated)
+ ✓ 6.2.17 Ensure local interactive user dot files are not group or world writable (Automated)
+
+17 tests, 3 failures

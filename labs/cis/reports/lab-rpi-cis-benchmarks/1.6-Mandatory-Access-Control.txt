@@ -1,0 +1,24 @@
+1.6-Mandatory-Access-Control.bats
+ ✗ 1.6.1.1 Ensure AppArmor is installed (Automated)
+   (from function `assert_success' in file benchmarks/1-Initial-Setup/../../test/test_helper/bats-files/src/assert_success.bash, line 42,
+    in test file benchmarks/1-Initial-Setup/1.6-Mandatory-Access-Control.bats, line 51)
+     `assert_success' failed
+   
+   -- command failed --
+   status : 1
+   output :
+   --
+   
+ ✗ 1.6.1.2 Ensure AppArmor is enabled in the bootloader configuration (Automated)
+   (from function `assert_success' in file benchmarks/1-Initial-Setup/../../test/test_helper/bats-files/src/assert_success.bash, line 42,
+    in test file benchmarks/1-Initial-Setup/1.6-Mandatory-Access-Control.bats, line 61)
+     `assert_success' failed
+   
+   -- command failed --
+   status : 1
+   output :
+   --
+   
+ - 1.6.1.3 Ensure all AppArmor Profiles are in enforce or complain mode (Automated) (skipped: profile output is not valid)
+
+3 tests, 2 failures, 1 skipped

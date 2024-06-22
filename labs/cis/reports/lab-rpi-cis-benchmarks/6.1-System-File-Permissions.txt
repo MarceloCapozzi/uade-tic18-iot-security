@@ -1,0 +1,275 @@
+6.1-System-File-Permissions.bats
+ ✓ 6.1.1 Ensure permissions on /etc/passwd are configured (Automated)
+ ✓ 6.1.2 Ensure permissions on /etc/passwd- are configured (Automated)
+ ✓ 6.1.3 Ensure permissions on /etc/group are configured (Automated)
+ ✓ 6.1.4 Ensure permissions on /etc/group- are configured (Automated)
+ ✓ 6.1.5 Ensure permissions on /etc/shadow are configured (Automated)
+ ✓ 6.1.6 Ensure permissions on /etc/shadow- are configured (Automated)
+ ✓ 6.1.7 Ensure permissions on /etc/gshadow are configured (Automated)
+ ✓ 6.1.8 Ensure permissions on /etc/gshadow- are configured (Automated)
+ ✗ 6.1.9 Ensure no world writable files exist (Automated)
+   (from function `assert_output' in file benchmarks/6-System-Maintenance/../../test/test_helper/bats-files/src/assert_output.bash, line 194,
+    in test file benchmarks/6-System-Maintenance/6.1-System-File-Permissions.bats, line 350)
+     `assert_output ""' failed
+   
+   -- output differs --
+   expected (0 lines):
+   
+   actual (2 lines):
+     /run/containerd/io.containerd.runtime.v2.task/moby/b1e74ef2dcf4e48acf39e40a90daab8959477d241badd933838d380e47ce283d/address
+     /run/containerd/io.containerd.runtime.v2.task/moby/823377b9ac2d053bc23bea41d71e2a64ecd5aa04ffdde95ba55cc28f73cbfc21/address
+   --
+   
+ ✗ 6.1.10 Ensure no unowned files or directories exist (Automated)
+   (from function `assert_output' in file benchmarks/6-System-Maintenance/../../test/test_helper/bats-files/src/assert_output.bash, line 194,
+    in test file benchmarks/6-System-Maintenance/6.1-System-File-Permissions.bats, line 359)
+     `assert_output ""' failed
+   
+   -- output differs --
+   expected (0 lines):
+   
+   actual (229 lines):
+     /var/lib/docker/volumes/dvwa_dvwa/_data
+     /var/lib/docker/volumes/dvwa_dvwa/_data/ibdata1
+     /var/lib/docker/volumes/dvwa_dvwa/_data/multi-master.info
+     /var/lib/docker/volumes/dvwa_dvwa/_data/ib_buffer_pool
+     /var/lib/docker/volumes/dvwa_dvwa/_data/ibtmp1
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql_upgrade_info
+     /var/lib/docker/volumes/dvwa_dvwa/_data/ddl_recovery.log
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/slow_log.CSV
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/event.MAD
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/plugin.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/columns_priv.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/func.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/column_stats.MAD
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/global_priv.MAD
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/gtid_slave_pos.ibd
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/transaction_registry.ibd
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/time_zone_leap_second.MAD
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/table_stats.MAD
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/time_zone_name.MAI
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/time_zone.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/help_topic.MAD
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/transaction_registry.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/servers.MAI
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/help_category.MAI
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/db.MAI
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/func.MAI
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/slow_log.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/help_relation.MAI
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/global_priv.MAI
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/event.MAI
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/event.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/time_zone_name.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/proxies_priv.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/general_log.CSM
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/roles_mapping.MAI
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/help_keyword.MAD
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/innodb_index_stats.ibd
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/servers.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/index_stats.MAD
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/time_zone_transition_type.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/help_relation.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/general_log.CSV
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/general_log.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/time_zone.MAD
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/time_zone_leap_second.MAI
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/roles_mapping.MAD
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/index_stats.MAI
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/roles_mapping.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/help_relation.MAD
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/innodb_table_stats.ibd
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/tables_priv.MAD
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/proc.MAI
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/tables_priv.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/tables_priv.MAI
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/db.opt
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/procs_priv.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/table_stats.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/columns_priv.MAI
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/gtid_slave_pos.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/db.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/time_zone_transition.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/help_category.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/help_keyword.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/plugin.MAD
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/time_zone_leap_second.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/innodb_index_stats.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/servers.MAD
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/columns_priv.MAD
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/time_zone_transition.MAI
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/time_zone_transition_type.MAI
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/table_stats.MAI
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/plugin.MAI
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/help_topic.MAI
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/innodb_table_stats.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/proc.MAD
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/column_stats.MAI
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/slow_log.CSM
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/proc.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/index_stats.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/func.MAD
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/time_zone_transition_type.MAD
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/procs_priv.MAI
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/time_zone_transition.MAD
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/column_stats.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/user.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/db.MAD
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/help_topic.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/time_zone_name.MAD
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/procs_priv.MAD
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/global_priv.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/help_keyword.MAI
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/help_category.MAD
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/time_zone.MAI
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/proxies_priv.MAD
+     /var/lib/docker/volumes/dvwa_dvwa/_data/mysql/proxies_priv.MAI
+     /var/lib/docker/volumes/dvwa_dvwa/_data/.my-healthcheck.cnf
+     /var/lib/docker/volumes/dvwa_dvwa/_data/ib_logfile0
+     /var/lib/docker/volumes/dvwa_dvwa/_data/aria_log_control
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/x@0024schema_tables_with_full_table_scans.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/host_summary_by_file_io.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/x@0024innodb_buffer_stats_by_schema.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/schema_redundant_indexes.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/wait_classes_global_by_latency.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/schema_table_statistics_with_buffer.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/latest_file_io.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/host_summary_by_statement_type.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/x@0024ps_digest_95th_percentile_by_avg_us.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/x@0024host_summary.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/x@0024user_summary.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/io_global_by_file_by_latency.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/waits_by_user_by_latency.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/x@0024io_global_by_file_by_latency.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/x@0024statements_with_runtimes_in_95th_percentile.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/processlist.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/schema_tables_with_full_table_scans.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/x@0024wait_classes_global_by_latency.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/x@0024wait_classes_global_by_avg_latency.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/x@0024innodb_lock_waits.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/sys_config.MAD
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/schema_auto_increment_columns.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/statements_with_sorting.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/statements_with_temp_tables.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/x@0024user_summary_by_statement_latency.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/session.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/x@0024io_global_by_file_by_bytes.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/schema_object_overview.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/x@0024host_summary_by_statement_type.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/x@0024memory_by_user_by_current_bytes.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/x@0024user_summary_by_statement_type.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/x@0024statement_analysis.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/io_by_thread_by_latency.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/host_summary_by_file_io_type.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/session_ssl_status.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/x@0024io_global_by_wait_by_latency.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/x@0024io_by_thread_by_latency.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/x@0024host_summary_by_file_io.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/x@0024ps_digest_avg_latency_distribution.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/schema_unused_indexes.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/x@0024latest_file_io.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/schema_index_statistics.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/statement_analysis.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/x@0024session.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/schema_table_lock_waits.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/waits_by_host_by_latency.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/io_global_by_wait_by_latency.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/innodb_buffer_stats_by_schema.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/metrics.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/x@0024schema_table_statistics.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/memory_global_total.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/user_summary_by_stages.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/host_summary.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/db.opt
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/statements_with_full_table_scans.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/x@0024schema_index_statistics.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/user_summary_by_file_io_type.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/x@0024ps_schema_table_statistics_io.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/io_global_by_wait_by_bytes.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/x@0024schema_table_lock_waits.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/sys_config.MAI
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/memory_by_thread_by_current_bytes.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/statements_with_errors_or_warnings.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/x@0024host_summary_by_file_io_type.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/x@0024host_summary_by_statement_latency.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/waits_global_by_latency.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/user_summary_by_file_io.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/x@0024memory_by_host_by_current_bytes.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/user_summary.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/host_summary_by_statement_latency.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/x@0024io_global_by_wait_by_bytes.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/x@0024statements_with_errors_or_warnings.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/user_summary_by_statement_type.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/x@0024waits_by_user_by_latency.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/wait_classes_global_by_avg_latency.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/x@0024schema_flattened_keys.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/memory_global_by_current_bytes.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/x@0024user_summary_by_file_io_type.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/x@0024memory_global_by_current_bytes.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/x@0024schema_table_statistics_with_buffer.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/version.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/x@0024waits_global_by_latency.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/host_summary_by_stages.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/x@0024user_summary_by_file_io.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/x@0024processlist.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/memory_by_host_by_current_bytes.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/schema_table_statistics.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/x@0024memory_global_total.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/x@0024statements_with_full_table_scans.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/ps_check_lost_instrumentation.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/x@0024host_summary_by_stages.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/x@0024statements_with_temp_tables.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/x@0024statements_with_sorting.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/innodb_lock_waits.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/innodb_buffer_stats_by_table.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/x@0024memory_by_thread_by_current_bytes.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/x@0024user_summary_by_stages.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/x@0024waits_by_host_by_latency.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/memory_by_user_by_current_bytes.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/user_summary_by_statement_latency.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/io_global_by_file_by_bytes.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/x@0024innodb_buffer_stats_by_table.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/statements_with_runtimes_in_95th_percentile.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/sys/sys_config.frm
+     /var/lib/docker/volumes/dvwa_dvwa/_data/aria_log.00000001
+     /var/lib/docker/volumes/dvwa_dvwa/_data/dvwa
+     /var/lib/docker/volumes/dvwa_dvwa/_data/dvwa/db.opt
+     /var/lib/docker/volumes/dvwa_dvwa/_data/performance_schema
+     /var/lib/docker/volumes/dvwa_dvwa/_data/performance_schema/db.opt
+     /var/lib/docker/overlay2/ad7836c6f9dfab69e335e5084a51cc3d69fd02153d5dafe1a6789120888d87db/diff/var/cache/apt/archives/partial
+     /var/lib/docker/overlay2/7278b6f817e2a514119c68691129f695d49ce8e55a0a4eb00fa09a751f4a2422/diff/usr/lib/mysql/plugin/auth_pam_tool_dir
+     /var/lib/docker/overlay2/7278b6f817e2a514119c68691129f695d49ce8e55a0a4eb00fa09a751f4a2422/diff/run/mysqld
+     /var/lib/docker/overlay2/7278b6f817e2a514119c68691129f695d49ce8e55a0a4eb00fa09a751f4a2422/diff/var/lib/mysql
+     /var/lib/docker/overlay2/7278b6f817e2a514119c68691129f695d49ce8e55a0a4eb00fa09a751f4a2422/diff/var/log/mysql
+     /var/lib/docker/overlay2/be4cb1de3a49b493b4d03eba911c5bf39cd1efeabd79d7620907f2f26eb3d41d/diff/var/cache/apt/archives/partial
+     /var/lib/docker/overlay2/648785affe90c6517534f57cbcfa6e3670ede4c3ae341d6346e055d9d09eee79/diff/var/cache/apt/archives/partial
+     /var/lib/docker/overlay2/a170a0bc3adff1e703f5c9a52652249b5fd4ec5c453903890f1804f46d131847/diff/var/cache/apt/archives/partial
+     /var/lib/docker/overlay2/a170a0bc3adff1e703f5c9a52652249b5fd4ec5c453903890f1804f46d131847/diff/var/lib/apt/lists/auxfiles
+     /var/lib/docker/overlay2/3c04af21ea7a972b1fa94e8568debbf5360b5e004d9858cfee5a629cec62966f/diff/var/cache/apt/archives/partial
+     /var/lib/docker/overlay2/7f5fe7b4bf789f6f92866159a46c42106fc28c2d14ea39c8ae313261d8761034/diff/run/mysqld
+     /var/lib/docker/overlay2/7f5fe7b4bf789f6f92866159a46c42106fc28c2d14ea39c8ae313261d8761034/diff/run/mysqld/mysqld.sock
+     /var/lib/docker/overlay2/7f5fe7b4bf789f6f92866159a46c42106fc28c2d14ea39c8ae313261d8761034/diff/run/mysqld/mysqld.pid
+     /var/lib/docker/overlay2/7f5fe7b4bf789f6f92866159a46c42106fc28c2d14ea39c8ae313261d8761034/merged/usr/lib/mysql/plugin/auth_pam_tool_dir
+     /var/lib/docker/overlay2/7f5fe7b4bf789f6f92866159a46c42106fc28c2d14ea39c8ae313261d8761034/merged/run/mysqld
+     /var/lib/docker/overlay2/7f5fe7b4bf789f6f92866159a46c42106fc28c2d14ea39c8ae313261d8761034/merged/run/mysqld/mysqld.sock
+     /var/lib/docker/overlay2/7f5fe7b4bf789f6f92866159a46c42106fc28c2d14ea39c8ae313261d8761034/merged/run/mysqld/mysqld.pid
+     /var/lib/docker/overlay2/7f5fe7b4bf789f6f92866159a46c42106fc28c2d14ea39c8ae313261d8761034/merged/var/lib/mysql
+     /var/lib/docker/overlay2/7f5fe7b4bf789f6f92866159a46c42106fc28c2d14ea39c8ae313261d8761034/merged/var/log/mysql
+     /var/lib/docker/overlay2/7b31e26aa9ecb9b7b521eb54ef8634e15a2f4d4af486e83bdade49b9630d84ad/merged/var/cache/apt/archives/partial
+   --
+   
+ ✗ 6.1.11 Ensure no ungrouped files or directories exist (Automated)
+   (from function `assert_failure' in file benchmarks/6-System-Maintenance/../../test/test_helper/bats-files/src/assert_failure.bash, line 66,
+    in test file benchmarks/6-System-Maintenance/6.1-System-File-Permissions.bats, line 369)
+     `assert_failure' failed
+   
+   -- command succeeded, but it was expected to fail --
+   output :
+   --
+   
+ - 6.1.12 Audit SUID executables (Manual) (skipped: this check must be done manually)
+ - 6.1.13 Audit SGID executables (Manual) (skipped: this check must be done manually)
+
+13 tests, 3 failures, 2 skipped

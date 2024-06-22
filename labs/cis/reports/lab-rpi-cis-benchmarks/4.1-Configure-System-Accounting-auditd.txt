@@ -1,0 +1,129 @@
+4.1-Configure-System-Accounting-auditd.bats
+ ✗ 4.1.1.1 Ensure auditd is installed (Automated)
+   (from function `assert_success' in file benchmarks/4-Logging-and-Auditing/../../test/test_helper/bats-files/src/assert_success.bash, line 42,
+    in test file benchmarks/4-Logging-and-Auditing/4.1-Configure-System-Accounting-auditd.bats, line 51)
+     `assert_success' failed
+   
+   -- command failed --
+   status : 1
+   output :
+   --
+   
+ ✗ 4.1.1.2 Ensure auditd service is enabled and active (Automated)
+   (from function `assert_success' in file benchmarks/4-Logging-and-Auditing/../../test/test_helper/bats-files/src/assert_success.bash, line 42,
+    in test file benchmarks/4-Logging-and-Auditing/4.1-Configure-System-Accounting-auditd.bats, line 66)
+     `assert_success' failed
+   
+   -- command failed --
+   status : 1
+   output :
+   --
+   
+ - 4.1.1.3 Ensure auditing for processes that start prior to auditd is enabled (Automated) (skipped: auditd is not installed)
+ - 4.1.1.4 Ensure audit_backlog_limit is sufficient (Automated) (skipped: auditd is not installed)
+ - 4.1.2.1 Ensure audit log storage size is configured (Automated) (skipped: auditd is not installed)
+ - 4.1.2.2 Ensure audit logs are not automatically deleted (Automated) (skipped: auditd is not installed)
+ - 4.1.2.3 Ensure system is disabled when audit logs are full (Automated) (skipped: auditd is not installed)
+ - 4.1.3.1 Ensure changes to system administration scope (sudoers) is collected (Automated) (skipped: auditd is not installed)
+ - 4.1.3.2 Ensure actions as another user are always logged (Automated) (skipped: auditd is not installed)
+ ✗ 4.1.3.3 Ensure events that modify the sudo log file are collected (Automated)
+   (from function `assert_output' in file benchmarks/4-Logging-and-Auditing/../../test/test_helper/bats-files/src/assert_output.bash, line 186,
+    in test file benchmarks/4-Logging-and-Auditing/4.1-Configure-System-Accounting-auditd.bats, line 201)
+     `assert_output --partial "-w /var/log/sudo.log -p wa -k sudo_log_file"' failed
+   
+   -- output does not contain substring --
+   substring : -w /var/log/sudo.log -p wa -k sudo_log_file
+   output    : ERROR: Variable 'SUDO_LOG_FILE_ESCAPED' is unset.
+   --
+   
+ - 4.1.3.4 Ensure events that modify date and time information are collected (Automated) (skipped: auditd is not installed)
+ - 4.1.3.5 Ensure events that modify the system's network environment are collected (Automated) (skipped: auditd is not installed)
+ ✗ 4.1.3.6 Ensure use of privileged commands are collected (Automated)
+   (from function `assert_output' in file benchmarks/4-Logging-and-Auditing/../../test/test_helper/bats-files/src/assert_output.bash, line 186,
+    in test file benchmarks/4-Logging-and-Auditing/4.1-Configure-System-Accounting-auditd.bats, line 273)
+     `assert_output --partial "OK"' failed
+   
+   -- output does not contain substring --
+   substring (1 lines):
+     OK
+   output (50 lines):
+     Warning: '/usr/bin/pkexec' not found in on disk configuration.
+     Warning: '/usr/bin/fusermount' not found in on disk configuration.
+     Warning: '/usr/bin/sudo' not found in on disk configuration.
+     Warning: '/usr/bin/ping' not found in on disk configuration.
+     Warning: '/usr/bin/chsh' not found in on disk configuration.
+     Warning: '/usr/bin/newgrp' not found in on disk configuration.
+     Warning: '/usr/bin/expiry' not found in on disk configuration.
+     Warning: '/usr/bin/mount' not found in on disk configuration.
+     Warning: '/usr/bin/gpasswd' not found in on disk configuration.
+     Warning: '/usr/bin/chage' not found in on disk configuration.
+     Warning: '/usr/bin/su' not found in on disk configuration.
+     Warning: '/usr/bin/chfn' not found in on disk configuration.
+     Warning: '/usr/bin/ssh-agent' not found in on disk configuration.
+     Warning: '/usr/bin/crontab' not found in on disk configuration.
+     Warning: '/usr/bin/umount' not found in on disk configuration.
+     Warning: '/usr/bin/ntfs-3g' not found in on disk configuration.
+     Warning: '/usr/bin/passwd' not found in on disk configuration.
+     Warning: '/usr/libexec/polkit-agent-helper-1' not found in on disk configuration.
+     Warning: '/usr/lib/openssh/ssh-keysign' not found in on disk configuration.
+     Warning: '/usr/lib/aarch64-linux-gnu/gstreamer1.0/gstreamer-1.0/gst-ptp-helper' not found in on disk configuration.
+     Warning: '/usr/lib/dbus-1.0/dbus-daemon-launch-helper' not found in on disk configuration.
+     Warning: '/usr/sbin/unix_chkpwd' not found in on disk configuration.
+     Warning: '/usr/sbin/mount.cifs' not found in on disk configuration.
+     Warning: '/usr/sbin/mount.nfs' not found in on disk configuration.
+     Warning: '/var/lib/docker/overlay2/7278b6f817e2a514119c68691129f695d49ce8e55a0a4eb00fa09a751f4a2422/diff/usr/lib/mysql/plugin/auth_pam_tool_dir/auth_pam_tool' not found in on disk configuration.
+     Warning: '/var/lib/docker/overlay2/7106aaabc90fd72e330dd4eee44fc3ffb045215b5fca133720404705e23259a6/diff/usr/bin/wall' not found in on disk configuration.
+     Warning: '/var/lib/docker/overlay2/7106aaabc90fd72e330dd4eee44fc3ffb045215b5fca133720404705e23259a6/diff/usr/bin/chsh' not found in on disk configuration.
+     Warning: '/var/lib/docker/overlay2/7106aaabc90fd72e330dd4eee44fc3ffb045215b5fca133720404705e23259a6/diff/usr/bin/newgrp' not found in on disk configuration.
+     Warning: '/var/lib/docker/overlay2/7106aaabc90fd72e330dd4eee44fc3ffb045215b5fca133720404705e23259a6/diff/usr/bin/expiry' not found in on disk configuration.
+     Warning: '/var/lib/docker/overlay2/7106aaabc90fd72e330dd4eee44fc3ffb045215b5fca133720404705e23259a6/diff/usr/bin/mount' not found in on disk configuration.
+     Warning: '/var/lib/docker/overlay2/7106aaabc90fd72e330dd4eee44fc3ffb045215b5fca133720404705e23259a6/diff/usr/bin/gpasswd' not found in on disk configuration.
+     Warning: '/var/lib/docker/overlay2/7106aaabc90fd72e330dd4eee44fc3ffb045215b5fca133720404705e23259a6/diff/usr/bin/chage' not found in on disk configuration.
+     Warning: '/var/lib/docker/overlay2/7106aaabc90fd72e330dd4eee44fc3ffb045215b5fca133720404705e23259a6/diff/usr/bin/su' not found in on disk configuration.
+     Warning: '/var/lib/docker/overlay2/7106aaabc90fd72e330dd4eee44fc3ffb045215b5fca133720404705e23259a6/diff/usr/bin/chfn' not found in on disk configuration.
+     Warning: '/var/lib/docker/overlay2/7106aaabc90fd72e330dd4eee44fc3ffb045215b5fca133720404705e23259a6/diff/usr/bin/umount' not found in on disk configuration.
+     Warning: '/var/lib/docker/overlay2/7106aaabc90fd72e330dd4eee44fc3ffb045215b5fca133720404705e23259a6/diff/usr/bin/passwd' not found in on disk configuration.
+     Warning: '/var/lib/docker/overlay2/7106aaabc90fd72e330dd4eee44fc3ffb045215b5fca133720404705e23259a6/diff/usr/sbin/unix_chkpwd' not found in on disk configuration.
+     Warning: '/var/lib/docker/overlay2/2e097c763a9eae5384cc5c9e53dec0c31080f9bce70f1e04dcffd53ceb559ce5/diff/usr/bin/wall' not found in on disk configuration.
+     Warning: '/var/lib/docker/overlay2/2e097c763a9eae5384cc5c9e53dec0c31080f9bce70f1e04dcffd53ceb559ce5/diff/usr/bin/chsh' not found in on disk configuration.
+     Warning: '/var/lib/docker/overlay2/2e097c763a9eae5384cc5c9e53dec0c31080f9bce70f1e04dcffd53ceb559ce5/diff/usr/bin/newgrp' not found in on disk configuration.
+     Warning: '/var/lib/docker/overlay2/2e097c763a9eae5384cc5c9e53dec0c31080f9bce70f1e04dcffd53ceb559ce5/diff/usr/bin/expiry' not found in on disk configuration.
+     Warning: '/var/lib/docker/overlay2/2e097c763a9eae5384cc5c9e53dec0c31080f9bce70f1e04dcffd53ceb559ce5/diff/usr/bin/mount' not found in on disk configuration.
+     Warning: '/var/lib/docker/overlay2/2e097c763a9eae5384cc5c9e53dec0c31080f9bce70f1e04dcffd53ceb559ce5/diff/usr/bin/gpasswd' not found in on disk configuration.
+     Warning: '/var/lib/docker/overlay2/2e097c763a9eae5384cc5c9e53dec0c31080f9bce70f1e04dcffd53ceb559ce5/diff/usr/bin/chage' not found in on disk configuration.
+     Warning: '/var/lib/docker/overlay2/2e097c763a9eae5384cc5c9e53dec0c31080f9bce70f1e04dcffd53ceb559ce5/diff/usr/bin/su' not found in on disk configuration.
+     Warning: '/var/lib/docker/overlay2/2e097c763a9eae5384cc5c9e53dec0c31080f9bce70f1e04dcffd53ceb559ce5/diff/usr/bin/chfn' not found in on disk configuration.
+     Warning: '/var/lib/docker/overlay2/2e097c763a9eae5384cc5c9e53dec0c31080f9bce70f1e04dcffd53ceb559ce5/diff/usr/bin/umount' not found in on disk configuration.
+     Warning: '/var/lib/docker/overlay2/2e097c763a9eae5384cc5c9e53dec0c31080f9bce70f1e04dcffd53ceb559ce5/diff/usr/bin/passwd' not found in on disk configuration.
+     Warning: '/var/lib/docker/overlay2/2e097c763a9eae5384cc5c9e53dec0c31080f9bce70f1e04dcffd53ceb559ce5/diff/usr/sbin/pam_extrausers_chkpwd' not found in on disk configuration.
+     Warning: '/var/lib/docker/overlay2/2e097c763a9eae5384cc5c9e53dec0c31080f9bce70f1e04dcffd53ceb559ce5/diff/usr/sbin/unix_chkpwd' not found in on disk configuration.
+   --
+   
+ - 4.1.3.7 Ensure unsuccessful file access attempts are collected (Automated) (skipped: auditd is not installed)
+ - 4.1.3.8 Ensure events that modify user/group information are collected (Automated) (skipped: auditd is not installed)
+ - 4.1.3.9 Ensure discretionary access control permission modification events are collected (Automated) (skipped: auditd is not installed)
+ - 4.1.3.10 Ensure successful file system mounts are collected (Automated) (skipped: auditd is not installed)
+ - 4.1.3.11 Ensure session initiation information is collected (Automated) (skipped: auditd is not installed)
+ - 4.1.3.12 Ensure login and logout events are collected (Automated) (skipped: auditd is not installed)
+ - 4.1.3.13 Ensure file deletion events by users are collected (Automated) (skipped: auditd is not installed)
+ - 4.1.3.14 Ensure events that modify the system's Mandatory Access Controls are collected (Automated) (skipped: auditd is not installed)
+ - 4.1.3.15 Ensure successful and unsuccessful attempts to use the chcon command are recorded (Automated) (skipped: auditd is not installed)
+ - 4.1.3.16 Ensure successful and unsuccessful attempts to use the setfacl command are recorded (Automated) (skipped: auditd is not installed)
+ - 4.1.3.17 Ensure successful and unsuccessful attempts to use the chacl command are recorded (Automated) (skipped: auditd is not installed)
+ - 4.1.3.18 Ensure successful and unsuccessful attempts to use the usermod command are recorded (Automated) (skipped: auditd is not installed)
+ - 4.1.3.19 Ensure kernel module loading unloading and modification is collected (Automated) (skipped: auditd is not installed)
+ - 4.1.3.20 Ensure the audit configuration is immutable (Automated) (skipped: auditd is not installed)
+ - 4.1.3.21 Ensure the running and on disk configuration is the same (Manual) (skipped: auditd is not installed)
+ - 4.1.4.1 Ensure audit log files are mode 0640 or less permissive (Automated) (skipped: auditd is not installed)
+ - 4.1.4.2 Ensure only authorized users own audit log files (Automated) (skipped: auditd is not installed)
+ - 4.1.4.3 Ensure only authorized groups are assigned ownership of audit log files (Automated) (skipped: auditd is not installed)
+ - 4.1.4.4 Ensure the audit log directory is 0750 or more restrictive (Automated) (skipped: auditd is not installed)
+ - 4.1.4.5 Ensure audit configuration files are 640 or more restrictive (Automated) (skipped: auditd is not installed)
+ - 4.1.4.6 Ensure audit configuration files are owned by root (Automated) (skipped: auditd is not installed)
+ - 4.1.4.7 Ensure audit configuration files belong to group root (Automated) (skipped: auditd is not installed)
+ - 4.1.4.8 Ensure audit tools are 755 or more restrictive (Automated) (skipped: auditd is not installed)
+ - 4.1.4.9 Ensure audit tools are owned by root (Automated) (skipped: auditd is not installed)
+ - 4.1.4.10 Ensure audit tools belong to group root (Automated) (skipped: auditd is not installed)
+ - 4.1.4.11 Ensure cryptographic mechanisms are used to protect the integrity of audit tools (Automated) (skipped: auditd is not installed)
+
+39 tests, 4 failures, 35 skipped

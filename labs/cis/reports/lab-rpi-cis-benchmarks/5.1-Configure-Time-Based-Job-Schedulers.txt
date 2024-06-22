@@ -1,0 +1,67 @@
+5.1-Configure-Time-Based-Job-Schedulers.bats
+ - 5.1 Configure time-based job schedulers (skipped: if cron and at are not installed, this section can be skipped)
+ ✓ 5.1.1 Ensure cron daemon is enabled and running (Automated)
+ ✗ 5.1.2 Ensure permissions on /etc/crontab are configured (Automated)
+   (from function `assert_success' in file benchmarks/5-Access-Authentication-and-Authorization/../../test/test_helper/bats-files/src/assert_success.bash, line 42,
+    in test file benchmarks/5-Access-Authentication-and-Authorization/5.1-Configure-Time-Based-Job-Schedulers.bats, line 95)
+     `assert_success' failed
+   
+   -- command failed --
+   status : 1
+   output :
+   --
+   
+ ✗ 5.1.3 Ensure permissions on /etc/cron.hourly are configured (Automated)
+   (from function `assert_success' in file benchmarks/5-Access-Authentication-and-Authorization/../../test/test_helper/bats-files/src/assert_success.bash, line 42,
+    in test file benchmarks/5-Access-Authentication-and-Authorization/5.1-Configure-Time-Based-Job-Schedulers.bats, line 133)
+     `assert_success' failed
+   
+   -- command failed --
+   status : 1
+   output :
+   --
+   
+ ✗ 5.1.4 Ensure permissions on /etc/cron.daily are configured (Automated)
+   (from function `assert_success' in file benchmarks/5-Access-Authentication-and-Authorization/../../test/test_helper/bats-files/src/assert_success.bash, line 42,
+    in test file benchmarks/5-Access-Authentication-and-Authorization/5.1-Configure-Time-Based-Job-Schedulers.bats, line 171)
+     `assert_success' failed
+   
+   -- command failed --
+   status : 1
+   output :
+   --
+   
+ ✗ 5.1.5 Ensure permissions on /etc/cron.weekly are configured (Automated)
+   (from function `assert_success' in file benchmarks/5-Access-Authentication-and-Authorization/../../test/test_helper/bats-files/src/assert_success.bash, line 42,
+    in test file benchmarks/5-Access-Authentication-and-Authorization/5.1-Configure-Time-Based-Job-Schedulers.bats, line 209)
+     `assert_success' failed
+   
+   -- command failed --
+   status : 1
+   output :
+   --
+   
+ ✗ 5.1.6 Ensure permissions on /etc/cron.monthly are configured (Automated)
+   (from function `assert_success' in file benchmarks/5-Access-Authentication-and-Authorization/../../test/test_helper/bats-files/src/assert_success.bash, line 42,
+    in test file benchmarks/5-Access-Authentication-and-Authorization/5.1-Configure-Time-Based-Job-Schedulers.bats, line 247)
+     `assert_success' failed
+   
+   -- command failed --
+   status : 1
+   output :
+   --
+   
+ ✗ 5.1.7 Ensure permissions on /etc/cron.d are configured (Automated)
+   (from function `assert_success' in file benchmarks/5-Access-Authentication-and-Authorization/../../test/test_helper/bats-files/src/assert_success.bash, line 42,
+    in test file benchmarks/5-Access-Authentication-and-Authorization/5.1-Configure-Time-Based-Job-Schedulers.bats, line 285)
+     `assert_success' failed
+   
+   -- command failed --
+   status : 1
+   output :
+   --
+   
+ - 5.1.8 Ensure cron is restricted to authorized users (Automated) (skipped: /etc/cron.allow is not exists)
+ - 5.1.9 Ensure at is restricted to authorized users (Automated) (skipped: /etc/at.allow is not exists)
+
+10 tests, 6 failures, 3 skipped

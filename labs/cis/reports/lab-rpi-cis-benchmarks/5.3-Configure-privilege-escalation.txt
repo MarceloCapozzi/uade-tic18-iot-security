@@ -1,0 +1,46 @@
+5.3-Configure-privilege-escalation.bats
+ ✓ 5.3.1 Ensure sudo is installed (Automated)
+ ✗ 5.3.2 Ensure sudo commands use pty (Automated)
+   (from function `assert_success' in file benchmarks/5-Access-Authentication-and-Authorization/../../test/test_helper/bats-files/src/assert_success.bash, line 42,
+    in test file benchmarks/5-Access-Authentication-and-Authorization/5.3-Configure-privilege-escalation.bats, line 57)
+     `assert_success' failed
+   
+   -- command failed --
+   status : 1
+   output :
+   --
+   
+ ✗ 5.3.3 Ensure sudo log file exists (Automated)
+   (from function `assert_success' in file benchmarks/5-Access-Authentication-and-Authorization/../../test/test_helper/bats-files/src/assert_success.bash, line 42,
+    in test file benchmarks/5-Access-Authentication-and-Authorization/5.3-Configure-privilege-escalation.bats, line 64)
+     `assert_success' failed
+   
+   -- command failed --
+   status : 1
+   output :
+   --
+   
+ ✓ 5.3.4 Ensure users must provide password for privilege escalation (Automated)
+ ✓ 5.3.5 Ensure re-authentication for privilege escalation is not disabled globally (Automated)
+ ✗ 5.3.6 Ensure sudo authentication timeout is configured correctly (Automated)
+   (from function `assert_success' in file benchmarks/5-Access-Authentication-and-Authorization/../../test/test_helper/bats-files/src/assert_success.bash, line 42,
+    in test file benchmarks/5-Access-Authentication-and-Authorization/5.3-Configure-privilege-escalation.bats, line 84)
+     `assert_success' failed
+   
+   -- command failed --
+   status : 1
+   output :
+   --
+   
+ ✗ 5.3.7 Ensure access to the su command is restricted (Automated)
+   (from function `assert_success' in file benchmarks/5-Access-Authentication-and-Authorization/../../test/test_helper/bats-files/src/assert_success.bash, line 42,
+    in test file benchmarks/5-Access-Authentication-and-Authorization/5.3-Configure-privilege-escalation.bats, line 91)
+     `assert_success' failed
+   
+   -- command failed --
+   status : 1
+   output :
+   --
+   
+
+7 tests, 4 failures

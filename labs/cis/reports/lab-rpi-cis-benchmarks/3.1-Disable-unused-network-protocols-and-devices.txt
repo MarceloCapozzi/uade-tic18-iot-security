@@ -1,0 +1,31 @@
+3.1-Disable-unused-network-protocols-and-devices.bats
+ ✓ 3.1.1 Ensure system is checked to determine if IPv6 is enabled (Manual)
+ ✗ 3.1.2 Ensure wireless interfaces are disabled (Automated)
+   (from function `assert_success' in file benchmarks/3-Network-Configuration/../../test/test_helper/bats-files/src/assert_success.bash, line 42,
+    in test file benchmarks/3-Network-Configuration/3.1-Disable-unused-network-protocols-and-devices.bats, line 51)
+     `assert_success' failed
+   
+   -- command failed --
+   status : 1
+   output :
+   --
+   
+ ✓ 3.1.3 Ensure DCCP is disabled (Automated)
+ ✗ 3.1.4 Ensure SCTP is disabled (Automated)
+   (from function `assert_output' in file benchmarks/3-Network-Configuration/../../test/test_helper/bats-files/src/assert_output.bash, line 186,
+    in test file benchmarks/3-Network-Configuration/3.1-Disable-unused-network-protocols-and-devices.bats, line 82)
+     `assert_output --partial "modprobe: FATAL: Module $module_name not found in directory"' failed
+   
+   -- output does not contain substring --
+   substring (1 lines):
+     modprobe: FATAL: Module sctp not found in directory
+   output (3 lines):
+     insmod /lib/modules/6.1.21-v8+/kernel/net/ipv4/udp_tunnel.ko.xz
+     insmod /lib/modules/6.1.21-v8+/kernel/net/ipv6/ip6_udp_tunnel.ko.xz
+     insmod /lib/modules/6.1.21-v8+/kernel/net/sctp/sctp.ko.xz
+   --
+   
+ ✓ 3.1.5 Ensure RDS is disabled (Automated)
+ ✓ 3.1.6 Ensure TIPC is disabled (Automated)
+
+6 tests, 2 failures
